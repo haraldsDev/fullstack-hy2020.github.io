@@ -527,3 +527,65 @@ const Content = ... {
 Our application passes on information in quite a primitive way at the moment, since it is based on individual variables. This situation will improve soon.
 
 </div>
+
+  
+ - - - - 
+  const Header = (chinchin) => {
+  return (
+    <h1>
+      {chinchin.course}
+    </h1>
+  )
+}
+
+const Part = (bimbo) => {
+  return (
+      <p>
+     {bimbo.smth1} {bimbo.smth2} 
+      </p>
+  )
+}
+
+const Content = (django) => {
+  return(
+    <div>
+      <Part smth1={django.xxx1} smth2={django.yyy1} />
+      <Part smth1={django.xxx2} smth2={django.yyy2} />
+      <Part smth1={django.xxx3} smth2={django.yyy3} />
+    </div>
+  )
+}
+
+const Total = (kravy) => {
+  return (
+      <p>Number of exercises {kravy.exercises1 + kravy.exercises2 + kravy.exercises3}</p>
+  )
+}
+
+const App = () => {
+  const jumbo = 'Half Stack application development'
+  const part1 = 'Fundamentals of React'
+  const exercises1 = 10
+  const part2 = 'Using props to pass data'
+  const exercises2 = 7
+  const part3 = 'State of a component'
+  const exercises3 = 14
+
+  return (
+    <div>
+      <Header course={jumbo} />
+      <Content 
+        xxx1={part1} yyy1={exercises1} 
+        xxx2={part2} yyy2={exercises2}
+        xxx3={part3} yyy3={exercises3}        
+      />
+      <Total 
+        exercises1={exercises1} 
+        exercises2={exercises2} 
+        exercises3={exercises3} 
+      />
+    </div>
+  )
+}
+
+export default App
